@@ -13,7 +13,7 @@ const SearchBar = () => {
   return (
     <input
       type='text'
-      className='rounded-full !px-4 bg-zinc-800'
+      className='rounded-full !w-[100%] !px-4 !py-4 bg-zinc-800'
       placeholder='Search by name, email, or role'
       onChange={handleSearchChange}
     />

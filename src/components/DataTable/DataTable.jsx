@@ -42,26 +42,26 @@ const DataTable = () => {
   );
 
   return (
-    <div className="flex flex-col  md:px-16 py-16 ">
+    <div className="flex flex-col  md:px-8 py-16 ">
       <SearchBar />
 
       <div class="flex flex-col overflow-x-auto mostly-customized-scrollbar">
   <div class="sm:-mx-6 lg:-mx-8">
-    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+    <div class="inline-block min-w-full py-2 sm:px-6 lg:px-9">
       <div class="overflow-x-auto ">
-      <table className="rounded-xl min-w-full px-2 my-4  overflow-x-auto">
+      <table className="rounded-xl w-full px-2 my-4  overflow-x-auto">
         <thead>
-          <tr className="bg-green-500 rounded-xl">
-            <th className="">
+          <tr className="bg-violet-600 px-10 py-8 rounded-t-xl">
+            <th className="px-10">
               <Checkbox
                 checked={selectedRows.length === rowsToDisplay.length}
                 onChange={handleSelectAll}
               />
             </th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Actions</th>
+            <th className="px-10 py-4">Name</th>
+            <th className="px-10 py-4">Email</th>
+            <th className="px-10 py-4">Role</th>
+            <th className="px-10 py-4" > Actions</th>
           </tr>
         </thead>
         <tbody className="bg-zinc-800">
@@ -70,8 +70,8 @@ const DataTable = () => {
           ))}
         </tbody>
       </table>
-      <div className="flex">
-        <Button className='bg-rose-600  sm:text-sm flex-grow-0 !rounded-full' onClick={handleDeleteSelected}>
+      <div className="flex items-center my-4 justify-center">
+        <Button className='bg-rose-600  sm:!text-sm md:text-lg flex-grow-0 !rounded-full' onClick={handleDeleteSelected}>
           Delete Selected
         </Button>
         <Pagination />

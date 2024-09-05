@@ -10,6 +10,7 @@ import {
 } from "../../features/data/dataSlice";
 import Button from "../Button";
 import Checkbox from "../Checkbox";
+import { Delete, Pencil,BadgeX , Save, Trash } from "lucide-react";
 
 const DataRow = ({ row }) => {
   const dispatch = useDispatch();
@@ -40,13 +41,14 @@ const DataRow = ({ row }) => {
   };
 
   return (
-    <tr className={isSelected ? "bg-zinc-700 overflow-x-auto" : " overflow-x-auto"}>
-      <td>
+    <tr className={isSelected ? "bg-zinc-700 " : " "}>
+      <td className="px-10  ">
         <Checkbox checked={isSelected} onChange={handleToggleSelection} />
       </td>
-      <td>
+      <td className="px-10  ">
         {isEditing ? (
           <input
+            className="bg-zinc-700 border-[1px] rounded-xl"
             type='text'
             name='name'
             value={editedRow.name}
@@ -55,10 +57,11 @@ const DataRow = ({ row }) => {
         ) : (
           row.name
         )}
-      </td>
-      <td>
+      </td >
+      <td className="px-10  ">
         {isEditing ? (
           <input
+          className="bg-zinc-700 border-[1px] rounded-xl"
             type='text'
             name='email'
             value={editedRow.email}
@@ -68,9 +71,10 @@ const DataRow = ({ row }) => {
           row.email
         )}
       </td>
-      <td>
+      <td className="px-10  ">
         {isEditing ? (
           <input
+          className="bg-zinc-700 border-[1px] rounded-xl"
             type='text'
             name='role'
             value={editedRow.role}
@@ -80,21 +84,33 @@ const DataRow = ({ row }) => {
           row.role
         )}
       </td>
-      <td>
+      <td className="px-10 flex ">
         {isEditing ? (
           <>
-            <Button className='bg-green-500 ' onClick={handleSave}>
-              Save
+            <Button className='bg-green-500 flex gap-2 items-center justify-center' onClick={handleSave}>
+            <span>
+              <Save />
+            </span>{" "}
+            Save
             </Button>
-            <Button className='bg-red-500' onClick={() => setIsEditing(false)}>Cancel</Button>
+            <Button className='bg-red-500  flex gap-2 items-center justify-center' onClick={() => setIsEditing(false)}> <span>
+              <BadgeX />
+            </span>{" "}
+            Cancel</Button>
           </>
         ) : (
           <>
-            <Button className='bg-blue-500' onClick={() => setIsEditing(true)}>
-              Edit
+            <Button className='bg-blue-500  flex gap-2 items-center justify-center' onClick={() => setIsEditing(true)}>
+            <span>
+              <Pencil />
+            </span>{" "}
+            Edit
             </Button>
-            <Button className='bg-red-500' onClick={handleDelete}>
-              Delete
+            <Button className='bg-red-500  flex gap-2 items-center justify-center' onClick={handleDelete}>
+            <span>
+              <Trash />
+            </span>{" "}
+            Delete
             </Button>
           </>
         )}

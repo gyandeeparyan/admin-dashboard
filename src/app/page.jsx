@@ -13,7 +13,7 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div className="md:px-40 px-4">
+    <div className="px-4 ">
    
       <DataTable />
     </div>
