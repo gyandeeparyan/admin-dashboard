@@ -23,13 +23,13 @@ const Pagination = () => {
   return (
     <div className="">
       <button
-        className='px-6 py-2 rounded-lg'
+        className='px-6 py-2 rounded-lg items-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold  shadow-md transition duration-300 ease-in-out'
         onClick={() => handlePageChange(1)}
         disabled={currentPage === 1}>
         First
       </button>
       <button
-        className='px-6 py-2 rounded-lg'
+        className='px-6 py-2 rounded-lg  items-center gap-2 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold  shadow-md transition duration-300 ease-in-out'
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}>
         Previous
@@ -37,20 +37,24 @@ const Pagination = () => {
       {[...Array(totalPages)].map((_, i) => (
         <button
           key={i}
-          className="rounded-full active:bg-blue-600 focus:bg-blue-600  px-4 py-2"
+          className={`w-10 h-10 items-center justify-center rounded-full shadow-md transition duration-300 ease-in-out ${
+            currentPage === i + 1
+              ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white'
+              : 'bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white'
+          }`}
           onClick={() => handlePageChange(i + 1)}
           disabled={currentPage === i + 1}>
           {i + 1}
         </button>
       ))}
       <button
-        className='px-6 py-2 rounded-lg'
+        className='px-6 py-2 rounded-lg bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold  shadow-md transition duration-300 ease-in-out'
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}>
         Next
       </button>
       <button
-        className='px-6 py-2 rounded-lg'
+        className='px-6 py-2 rounded-lg bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold  shadow-md transition duration-300 ease-in-out'
         onClick={() => handlePageChange(totalPages)}
         disabled={currentPage === totalPages}>
         Last
