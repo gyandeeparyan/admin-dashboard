@@ -9,7 +9,7 @@ import {
   toggleRowSelection,
 } from "../../../features/data/dataSlice";
 import Button from "../../Button";
-import Checkbox from "@/components/Checkbox";
+import Checkbox from "../../Checkbox";
 import { Delete, Pencil, BadgeX, Save, Trash } from "lucide-react";
 import Loader from "./Loader"
 const DataRow = ({ row }) => {

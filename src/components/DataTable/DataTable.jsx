@@ -13,8 +13,8 @@ import DataRow from "./DataRow/DataRow";
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
 import Button from "../Button";
-import Checkbox from "@/components/Checkbox";
-import { BadgeMinus, Trash2 } from "lucide-react";
+import Checkbox from "../Checkbox";
+import { BadgeMinus,  } from "lucide-react";
 
 const DataTable = () => {
   const dispatch = useDispatch();
