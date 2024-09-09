@@ -13,7 +13,7 @@ import DataRow from "./DataRow/DataRow";
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
 import Button from "../Button";
-import Checkbox from "../Checkbox";
+import Checkbox from "@/components/Checkbox";
 import { BadgeMinus, Trash2 } from "lucide-react";
 
 const DataTable = () => {
