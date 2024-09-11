@@ -9,13 +9,12 @@ import {
   toggleRowSelection,
 } from "../../../features/data/dataSlice";
 import Button from "../../Button";
-import Checkbox from "@/components/Checkbox";
 import {  Pencil, BadgeX, Save, Trash } from "lucide-react";
 import Loader from "./Loader"
 const DataRow = ({ row }) => {
   const dispatch = useDispatch();
   const selectedRows = useSelector(selectSelectedRows);
-  const status = useSelector(state => state.data.status);
+  let status = useSelector(state => state.data.status);
   const isSelected = selectedRows.includes(row.id);
   const [isEditing, setIsEditing] = useState(false);
   const [editedRow, setEditedRow] = useState({ ...row });
@@ -42,25 +41,19 @@ const DataRow = ({ row }) => {
   };
 
 
-  if (status === 'loading') {
-    return (
-      <table className="w-full">
-        <tbody>
-          {[...Array(10)].map((_, index) => (
-            <Loader key={index} />
-          ))}
-        </tbody>
-      </table>
-    );
-  }
+ 
   if (status === 'failed') {
     return <div>Error loading data. Please try again.</div>;
   }
 
-  return (
+  return status === 'loading' ?     <Loader  />:  (
     <tr className={isSelected ? "bg-zinc-700 " : " "}>
       <td className='px-10  '>
-        <Checkbox checked={isSelected} onChange={handleToggleSelection} />
+      <input
+    type="checkbox"
+    checked={isSelected}
+    onChange={handleToggleSelection}
+  />
       </td>
       <td className='px-10  '>
         {isEditing ? (

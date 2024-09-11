@@ -13,8 +13,8 @@ import DataRow from "./DataRow/DataRow";
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
 import Button from "../Button";
-import Checkbox from "../Checkbox";
-import { BadgeMinus,  } from "lucide-react";
+
+import { BadgeMinus } from "lucide-react";
 
 const DataTable = () => {
   const dispatch = useDispatch();
@@ -54,7 +54,8 @@ const DataTable = () => {
                 <thead>
                   <tr className='bg-violet-600 px-10 py-8 rounded-t-xl'>
                     <th className='px-10'>
-                      <Checkbox
+                      <input
+                        type='checkbox'
                         checked={selectedRows.length === rowsToDisplay.length}
                         onChange={handleSelectAll}
                       />
