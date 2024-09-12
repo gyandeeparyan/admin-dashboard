@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <ReduxProvider>
      
       <html lang='en'>
-
+         <head><link rel="icon" href="/favicon.png" sizes="any" /></head>
         <body className={inter.className}><Navbar/>{children}</body>
       </html>
     </ReduxProvider>

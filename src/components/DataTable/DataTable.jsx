@@ -46,10 +46,10 @@ const DataTable = () => {
     <div className='flex flex-col  md:px-8 py-16 '>
       <SearchBar />
 
-      <div class='flex flex-col overflow-x-auto mostly-customized-scrollbar'>
+      <div class='flex flex-col overflow-x-auto text-white mostly-customized-scrollbar'>
         <div class='sm:-mx-6 lg:-mx-8'>
           <div class='inline-block min-w-full py-2 sm:px-6 lg:px-9'>
-            <div class='overflow-x-auto '>
+            <div class='overflow-x-auto  '>
               <table className='rounded-xl w-full px-2 my-4  overflow-x-auto'>
                 <thead>
                   <tr className='bg-violet-600 px-10 py-8 rounded-t-xl'>
