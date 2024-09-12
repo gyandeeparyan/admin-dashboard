@@ -2,7 +2,9 @@
 
 const Loader = () => {
   return (
-    <tr className='animate-pulse bg-zinc-800 w-full'>
+    
+    <tr className='animate-pulse bg-zinc-800 w-full rounded-2xl'>
+      
       <td className='px-10 py-4'>
         <div className='h-6 w-6 bg-zinc-600 rounded'></div>
       </td>

@@ -10,11 +10,12 @@ import {
 } from "../../../features/data/dataSlice";
 import Button from "../../Button";
 import {  Pencil, BadgeX, Save, Trash } from "lucide-react";
-import Loader from "./Loader"
+import Loader from "../../../app/Loader"
 const DataRow = ({ row }) => {
   const dispatch = useDispatch();
   const selectedRows = useSelector(selectSelectedRows);
   let status = useSelector(state => state.data.status);
+  
   const isSelected = selectedRows.includes(row.id);
   const [isEditing, setIsEditing] = useState(false);
   const [editedRow, setEditedRow] = useState({ ...row });
@@ -42,11 +43,10 @@ const DataRow = ({ row }) => {
 
 
  
-  if (status === 'failed') {
-    return <div>Error loading data. Please try again.</div>;
-  }
 
-  return status === 'loading' ?     <Loader  />:  (
+
+
+  return   (
     <tr className={isSelected ? "bg-zinc-700 " : " "}>
       <td className='px-10  '>
       <input
